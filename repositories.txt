@@ -1,0 +1,3 @@
+duckietown/dt-ros-commons:daffy
+AleksandarPetrov/dt-duckiebot-interface:devel20
+AleksandarPetrov/dt-car-interface:daffy
