@@ -22,6 +22,7 @@ RUN apt-get update \
 # install python dependencies
 RUN pip install -r /dependencies-py.txt
 
+# copy list of repositories
 COPY repositories.txt /repositories.txt
 
 COPY launch.sh /launch.sh
