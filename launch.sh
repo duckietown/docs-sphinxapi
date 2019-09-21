@@ -11,17 +11,6 @@ while read p; do
   git clone --depth 1 -b ${branch_name} "https://github.com/${repo}" "${CATKIN_WS_DIR}/src/${repo_name}"
 done < /repositories.txt
 
-touch /dependencies-apt.txt
-touch /dependencies-py.txt
-
-# install apt dependencies
-apt-get update \
-  && apt-get install -y --no-install-recommends \
-    $(awk -F: '/^[^#]/ { print $1 }' /dependencies-apt.txt | uniq)
-
-# install python dependencies
-# pip install -r /dependencies-py.txt
-
 # build packages
 source /opt/ros/${ROS_DISTRO}/setup.sh && \
   catkin_make -C ${CATKIN_WS_DIR}/
