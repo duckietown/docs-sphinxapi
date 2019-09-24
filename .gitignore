@@ -1,0 +1,4 @@
+docs/build
+*pyc
+dt-car-interface/*
+dt-duckiebot-interface/*
