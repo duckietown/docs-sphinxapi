@@ -28,3 +28,6 @@ source "${CATKIN_WS_DIR}/devel/setup.bash"
 # build docs
 cd "${CATKIN_WS_DIR}/src/docs"
 make html
+
+# copy to output folder
+cp -r build/html/* /output
