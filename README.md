@@ -9,4 +9,4 @@ docker create --name dt-sphynxdocs-temp $(docker build -q .); docker cp dt-sphyn
 ```
 
 ## Adding a new repository
-To add a new repository, edit the `repositories.txt` and `docs/source/repositories.rst` files. 
+To add a new repository, edit the `repositories.txt` and `docs/source/index.rst` file. 

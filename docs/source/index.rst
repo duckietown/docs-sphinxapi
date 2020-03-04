@@ -9,9 +9,11 @@ Enjoy your time using Duckietown!
 
 .. toctree::
    :maxdepth: 5
-   :caption: Contents:
+   :caption: Repositories:
 
-   repositories
+   repositories/dt-ros-commons/docs/source/packages
+   repositories/dt-duckiebot-interface/docs/source/packages
+   repositories/dt-car-interface/docs/source/packages
 
 
 
