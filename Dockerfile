@@ -25,11 +25,12 @@ RUN pip install -r /dependencies-py.txt
 # copy list of repositories
 COPY repositories.txt /repositories.txt
 
-COPY launch.sh /launch.sh
-CMD ["/launch.sh"]
+# copy docs boilerplate
+COPY docs ${CATKIN_WS_DIR}/src/docs
 
 # install napoleon
 RUN cd /; git clone https://github.com/AleksandarPetrov/napoleon; cd /napoleon; python setup.py install -f
 
-# copy docs boilerplate
-COPY docs ${CATKIN_WS_DIR}/src/docs
+# build the docs
+COPY launch.sh /launch.sh
+RUN  /launch.sh

@@ -30,4 +30,5 @@ cd "${CATKIN_WS_DIR}/src/docs"
 make html
 
 # copy to output folder
+mkdir /output
 cp -r build/html/* /output
