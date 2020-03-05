@@ -1,5 +1,5 @@
-Welcome to the Duckietown ROS API documentation!
-================================================
+Welcome to the Duckietown's API documentation!
+==============================================
 
 Here you can find detailed description of the ROS nodes running in the demos implemented in the `daffy` version of the Duckietown codebase. These are organized by repository (hence also by Docker image). You can use the navigation on the side to find the documentation of the various nodes.
 
