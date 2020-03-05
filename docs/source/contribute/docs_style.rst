@@ -9,7 +9,7 @@ In order to ensure consistent and helpful documentation, adhere to the following
   not the init method. The init method **should not** have a docstring. If it has, it will not
   be shown in the documentation
 
-* Arguments, topics, services, parameters, etc. should always be written in the local namespace (i.e. starting with ~).
+* Arguments, topics, services, parameters, etc. should always be written in the local namespace (i.e. starting with ``~``).
 
 * External links can be added like that::
 
@@ -17,17 +17,17 @@ In order to ensure consistent and helpful documentation, adhere to the following
 
 * Values, names of variables, errors, messages, etc, should be in grave accent quotes::
 
-    `like that`
+    ``like that``
 
 * Every class, method or function should have a docstring describing at least its inputs and outputs.
 
 * Always indicate the type of the input or output. If it is a message, use the message type. If a list, a dictionary, or a tuple, you can use expressions like ``(:obj:`list` of :obj:`float`)``
 
-* The following section names have special use: `Examples`, `Raises`, `Configuration`, `Subscribers`, `Subscriber`, `Publishers`, `Publisher`, `Services`, `Service`, `Fields`, `inputs`, `input`, `outputs`, `output`.
+* The following section names have special use: ``Examples``, ``Raises``, ``Configuration``, ``Subscribers``, ``Subscriber``, ``Publishers``, ``Publisher``, ``Services``, ``Service``, ``Fields``, ``inputs``, ``input``, ``outputs``, ``output``.
 
 * You can add a link to a different package, node, method, or object like that::
 
-  :py:mod:`duckietown.DTROS.publisher`
+  :py:mod:`duckietown`
   :py:class:`duckietown.DTROS`
   :py:meth:`duckietown.DTROS.publisher`
   :py:attr:`duckietown.DTROS.switch`

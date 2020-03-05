@@ -1,4 +1,4 @@
-ROS Nodes Code style guide
+ROS nodes code style guide
 ==========================
 
 In order to ensure consistent and helpful code that is easy to understand and extend we follow the general guidelines outline here.
@@ -7,7 +7,7 @@ In order to ensure consistent and helpful code that is easy to understand and ex
 
 * All node parameters should be dynamically configurable unless there is a very good reason why not. :py:class:`duckietown.DTROS`’s framework should be used for handling these.
 
-* The beginning of the `__init__` method of the ROS node class should be structured like that::
+* The beginning of the ``__init__`` method of the ROS node class should be structured like that::
 
     def __init__(self, node_name):
 
@@ -21,17 +21,17 @@ In order to ensure consistent and helpful code that is easy to understand and ex
 
   The :py:meth:`duckietown.DTROS.updateParameters()` method loads the parameters from the parameter server and starts a process that regularly checks if they are changed. Do not forget to add it. Otherwise the parameters will never be loaded.
 
-  If the parameters are changed the :py:attr:`duckietown.DTROS.parametersChanged` property will be set to `True`. Your node should detect that, adjust anything that depends on these parameters, adn then set it back to `False`.
+  If the parameters are changed the :py:attr:`duckietown.DTROS.parametersChanged` property will be set to ``True``. Your node should detect that, adjust anything that depends on these parameters, adn then set it back to ``False``.
 
-* The parameters of each node should be stored under `config/NODE_NAME/default.yaml`.
+* The parameters of each node should be stored under ``config/NODE_NAME/default.yaml``.
 
 * The default values should be only stored in the config files, no default values should be hard-coded in the code.
 
-* Logging should be done through the :py:meth:`duckietown.DTROS.log` method. More on this XXX
+* Logging should be done through the :py:meth:`duckietown.DTROS.log` method. You can read more on this in the documentation of the method.
 
-* Node shutdown should use the :py:meth:`duckietown.DTROS.onShutdown` method inherited from :py:class:`duckietown.DTROS` unless there’s a good reason to customize it. See XXX for an example of redefining the :py:meth:`duckietown.DTROS.onShutdown` method.
+* Node shutdown should use the :py:meth:`duckietown.DTROS.onShutdown` method inherited from :py:class:`duckietown.DTROS` unless there’s a good reason to customize it. See :py:class:`wheels_driver.WheelsDriverNode` for an example of redefining the :py:meth:`duckietown.DTROS.onShutdown` method.
 
-* The nodes should accept their name as an initialization argument called `node_name`.
+* The nodes should accept their name as an initialization argument called ``node_name``.
 
 * Nodes should be defined as classes, and launched like that::
 
@@ -70,17 +70,17 @@ In order to ensure consistent and helpful code that is easy to understand and ex
   set to `False`. This will automatically prevent your node from receiving any messages and
   hence executing callbacks. If you need some  special treatment fo such cases, make sure to implement it.
 
-* Always use :py:meth:`duckietown.DTROS.publisher` and :py:meth:`duckietown.DTROS.subscriber` to initialize Publishers and Subscribers. **Never** use `rospy.Subscriber` or `rospy.Publisher`. The APIs are identical.
+* Always use :py:meth:`duckietown.DTROS.publisher` and :py:meth:`duckietown.DTROS.subscriber` to initialize Publishers and Subscribers. **Never** use ``rospy.Subscriber`` or ``rospy.Publisher``. The APIs are identical.
 
-* The names of all callback methods should start with `cb`, e.g. `cbWheelsCmd`.
+* The names of all callback methods should start with ``cb``, e.g. ``cbWheelsCmd``.
 
 * camelCase should be used for naming methods.
 
-* In Python code, **never ever** do universal imports like `from somepackage import *`. This is
+* In Python code, **never ever** do universal imports like ``from somepackage import *``. This is
   an extremely bad practice. Instead, specify exactly what you are importing, i.e.
-  `from somepackage import somefunction`.  It is fine if you do it in `__init__.py` files
+  ``from somepackage import somefunction``.  It is fine if you do it in ``__init__.py`` files
   but even then try to avoid it if possible.
 
 * When using a package that has a common practice alias, use it,
-  e.g. `import numpy as np`, `import matplotlib.pyplot as plt`, etc. However, refrain from
+  e.g. ``import numpy as np``, ``import matplotlib.pyplot as plt``, etc. However, refrain from
   defining your own aliases.
