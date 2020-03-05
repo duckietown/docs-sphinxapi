@@ -30,10 +30,10 @@ repository. The standard structure of these pages is as follows::
 
    .. contents::
 
-   The `led_emitter` package provides the drivers that control the LEDs of a Duckiebot.
+   The ``led_emitter`` package provides the drivers that control the LEDs of a Duckiebot.
    It provides a convenient API for turning the LEDs on and off, changing their color and making
    them blink with various frequencies. You can see examples how to do that in the description
-   of the `LEDEmitterNode` class bellow.
+   of the ``LEDEmitterNode`` class bellow.
 
    LEDEmitterNode
    --------------
@@ -53,6 +53,8 @@ of the page. This must be followed by a short description of the package. After 
 all nodes (if any) should be provided, followed by the documentation of the libraries (if any).
 These files must be **manually** updated at this moment. The generation of the documentation
 from the libraries and the ROS nodes source files is **automatic**.
+
+.. _docs-build-individual:
 
 Building an individual repository
 ---------------------------------
