@@ -15,6 +15,14 @@ Enjoy your time using Duckietown!
    repositories/dt-duckiebot-interface/docs/source/packages
    repositories/dt-car-interface/docs/source/packages
 
+.. toctree::
+   :maxdepth: 5
+   :caption: Contribute:
+
+   contribute/code_style.rst
+   contribute/docs_style.rst
+   contribute/build.rst
+   contribute/build_details.rst
 
 
 Indices and tables

@@ -40,10 +40,17 @@ dirpath = tempfile.mkdtemp()
 module_dir = os.path.join(dirpath, module_name)
 os.makedirs(module_dir)
 
+# Get the list of repositories
+with open('repositories.txt') as f:
+    repositories = f.readlines()
+repositories = [repo.split('/')[1].split(':')[0] for repo in repositories]
+print("REPOSITORIES: ", repositories)
+
+
 print("LOOKING FOR NODE SOURCE FILES")
 # Find all the nodes and move them to the temp module folder
 node_source_files = []
-for repo in ['dt-duckiebot-interface', 'dt-car-interface']:
+for repo in repositories:
     for pkg in os.listdir(os.path.abspath('repositories/%s/packages/'%repo)):
         # Add the include paths such that all the include modules can also be used with autodocs
         sys.path.insert(0, os.path.abspath('repositories/%s/packages/%s/include' % (repo,pkg)))
@@ -71,8 +78,8 @@ sys.setrecursionlimit(1500)
 
 # -- Project information -----------------------------------------------------
 
-project = 'Duckietown ROS API'
-copyright = '2019, Duck Quackermann'
+project = 'Duckietown API'
+copyright = 'Duckietown'
 author = 'Duck Quackermann'
 
 # The full version, including alpha/beta/rc tags

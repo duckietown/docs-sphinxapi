@@ -22,8 +22,6 @@ RUN apt-get update \
 # install python dependencies
 RUN pip install -r /dependencies-py.txt
 
-# copy list of repositories
-COPY repositories.txt /repositories.txt
 
 # copy docs boilerplate
 COPY docs ${CATKIN_WS_DIR}/src/docs
