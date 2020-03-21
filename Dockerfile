@@ -31,4 +31,6 @@ RUN cd /; git clone https://github.com/AleksandarPetrov/napoleon; cd /napoleon; 
 
 # build the docs
 COPY launch.sh /launch.sh
-RUN  /launch.sh
+#RUN  /launch.sh
+CMD []
+ENTRYPOINT /launch.sh

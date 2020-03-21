@@ -2,6 +2,11 @@
 
 set -e
 
+dest=/output
+
+echo "Writing to '$dest'"
+find $dest
+
 mkdir -p "${CATKIN_WS_DIR}/src"
 
 while read p; do
@@ -29,6 +34,6 @@ source "${CATKIN_WS_DIR}/devel/setup.bash"
 cd "${CATKIN_WS_DIR}/src/docs"
 make html
 
-# copy to output folder
-mkdir /output
-cp -r build/html/* /output
+cp -r build/html/* $dest
+
+find $dest

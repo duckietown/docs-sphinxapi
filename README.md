@@ -2,11 +2,24 @@
 
 This container builds and combines the API docs for several Duckietown containers.
 
-## How to use
-To generate the documentation you need to build the container and run it. This is conveniently packed in the following command. Note that the mounted `output` folder is where the resulting `html` files will be copied to.
-```
-rm -r output; docker create --name docs-sphinxapi-temp $(docker build -q .); docker cp docs-sphinxapi-temp:/output output; docker rm docs-sphinxapi-temp
-```
+## Quickstart
+
+The command 
+
+    make run
+    
+will build the container and produce the output in `output-dir` in the current directory.
+
+# Calling from scripts
+
+You can run the code as follows:
+
+    docker run -it --rm -v "DEST:/output" duckietown/docs-sphinxapi:daffy
+    
+where `DEST` is the absolute path to a directory where you want the output to appear.
+ 
 
 ## Adding a new repository
+
+
 To add a new repository, edit the `repositories.txt` and `docs/source/index.rst` file. 
