@@ -16,7 +16,7 @@ build:
 	docker build -t $(tag) $(build_options) .
 
 push: build
-	docker push $(tag)
+	dts build_utils push $(tag)
 
 run: build
 	rm -rf $(outdir)
