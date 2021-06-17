@@ -4,7 +4,8 @@ ARG ROS_DISTRO=kinetic
 ARG BASE_TAG=${MAJOR}-${ARCH}
 
 # define base image
-FROM duckietown/dt-ros-${ROS_DISTRO}-base:${BASE_TAG}
+ARG DOCKER_REGISTRY=docker.io
+FROM ${DOCKER_REGISTRY}/duckietown/dt-ros-${ROS_DISTRO}-base:${BASE_TAG}
 
 ENV SOURCE_DIR /code
 ENV CATKIN_WS_DIR "${SOURCE_DIR}/catkin_ws"
@@ -20,6 +21,10 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 # install python dependencies
+ARG PIP_INDEX_URL
+ENV PIP_INDEX_URL=${PIP_INDEX_URL}
+RUN echo PIP_INDEX_URL=${PIP_INDEX_URL}
+
 RUN pip install -r /dependencies-py.txt
 
 
