@@ -2,7 +2,7 @@ ARG ARCH=amd64
 ARG MAJOR=daffy
 ARG ROS_DISTRO=kinetic
 ARG BASE_TAG=${MAJOR}-${ARCH}
-
+ARG VERSION="6.0.1"
 # define base image
 ARG DOCKER_REGISTRY=docker.io
 FROM ${DOCKER_REGISTRY}/duckietown/dt-ros-${ROS_DISTRO}-base:${BASE_TAG}
@@ -25,7 +25,7 @@ ARG PIP_INDEX_URL="https://pypi.org/simple"
 ENV PIP_INDEX_URL=${PIP_INDEX_URL}
 RUN echo PIP_INDEX_URL=${PIP_INDEX_URL}
 
-RUN pip install -r /dependencies-py.txt
+RUN python3 -m pip install -r /dependencies-py.txt
 
 
 # copy docs boilerplate
@@ -36,6 +36,6 @@ RUN cd /; git clone https://github.com/AleksandarPetrov/napoleon; cd /napoleon; 
 
 # build the docs
 COPY launch.sh /launch.sh
-#RUN  /launch.sh
+#RUN /launch.sh
 CMD []
 ENTRYPOINT /launch.sh
