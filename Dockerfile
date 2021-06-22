@@ -2,7 +2,7 @@ ARG ARCH=amd64
 ARG MAJOR=daffy
 ARG ROS_DISTRO=kinetic
 ARG BASE_TAG=${MAJOR}-${ARCH}
-ARG VERSION="6.0.0"
+ARG VERSION="6.0.1"
 # define base image
 ARG DOCKER_REGISTRY=docker.io
 FROM ${DOCKER_REGISTRY}/duckietown/dt-ros-${ROS_DISTRO}-base:${BASE_TAG}
