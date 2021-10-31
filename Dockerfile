@@ -12,7 +12,7 @@ ENV CATKIN_WS_DIR "${SOURCE_DIR}/catkin_ws"
 
 # copy dependencies files only
 COPY ./dependencies-apt.txt "${REPO_PATH}/"
-COPY ./dependencies-py.txt "${REPO_PATH}/"
+COPY ./dependencies-py.* "${REPO_PATH}/"
 
 # install apt dependencies
 RUN apt-get update \
